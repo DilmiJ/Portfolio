@@ -148,6 +148,15 @@ const Hero = () => {
               >
                 Get In Touch
               </button>
+              <a
+                href="/Dilmijayanetthi-ASEBW.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+                style={{ marginLeft: "15px", display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}
+              >
+                View CV
+              </a>
             </div>
           </div>
           <div className="hero-image" ref={imageRef}>

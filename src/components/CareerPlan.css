@@ -1,0 +1,221 @@
+.career-plan {
+  padding: 100px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.career-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.career-intro {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.career-intro.animate-in {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.career-intro h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.career-intro p {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Timeline Cards */
+.timeline-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.timeline-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.timeline-card.animate-in {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.card-header h4 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.goal-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.goal-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  color: var(--text-color);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.goal-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Skills & Action Grid */
+.skills-action-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.skills-action-grid.animate-in {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@media (min-width: 768px) {
+  .skills-action-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.plan-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.plan-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.skills-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.skill-category h5 {
+  color: var(--heading-color);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.skill-category ul,
+.action-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skill-category ul li,
+.action-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.skill-category ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.action-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.conclusion {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--border-color);
+  font-style: italic;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.conclusion strong {
+  color: var(--primary-color);
+  font-style: normal;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .career-plan {
+    padding: 60px 0;
+  }
+  .career-intro {
+    padding: 20px;
+  }
+  .timeline-card, .plan-card {
+    padding: 20px;
+  }
+  .timeline-container {
+    grid-template-columns: 1fr;
+  }
+  .skills-split {
+    grid-template-columns: 1fr;
+  }
+}

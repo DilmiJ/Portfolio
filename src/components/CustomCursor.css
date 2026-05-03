@@ -3,52 +3,70 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
-  background: var(--primary-color);
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--primary-color);
+  background: transparent;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  transition: all 0.15s ease-out;
-  opacity: 0.8;
+  /* Only transition visual properties, NOT transform to avoid lagging the JS animation */
+  transition: width 0.2s ease-out, height 0.2s ease-out, background 0.2s ease-out, border-color 0.2s ease-out;
+  opacity: 1;
 }
 
 .custom-cursor-dot {
   position: fixed;
   top: 0;
   left: 0;
-  width: 4px;
-  height: 4px;
-  background: var(--text-primary);
+  width: 6px;
+  height: 6px;
+  background: var(--primary-color);
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
-  transition: all 0.1s ease-out;
+  transition: width 0.2s ease-out, height 0.2s ease-out, background 0.2s ease-out;
 }
 
-/* Hover states */
+/* Hover states for links and interactive elements */
 .custom-cursor.cursor-hover {
-  width: 40px;
-  height: 40px;
-  background: rgba(59, 130, 246, 0.2);
-  border: 2px solid var(--primary-color);
+  width: 50px;
+  height: 50px;
+  background: rgba(var(--primary-color-rgb), 0.1);
+  border: 1px solid var(--primary-color);
+  /* Adjust offset dynamically via CSS transform won't work well with JS, 
+     so JS still offsets by 15px. The 50px circle will center automatically 
+     because of transform-origin or we can let it expand slightly off-center, 
+     or just let it be. Actually, width/height expansion happens from top-left. 
+     To fix top-left expansion centering, we should adjust margins or use flex. 
+     A better way is to use margin or transform translation. */
+  margin-top: -10px;
+  margin-left: -10px;
 }
 
 .custom-cursor-dot.cursor-hover {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
+  margin-top: -2px;
+  margin-left: -2px;
   background: var(--primary-color);
 }
 
 /* Click states */
 .custom-cursor.cursor-click {
-  transform: scale(0.7);
-  background: var(--accent-color);
+  transform: scale(0.8) !important; /* This will temporarily override the JS transform if not careful, better to use width/height */
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+  background: rgba(var(--primary-color-rgb), 0.3);
 }
 
 .custom-cursor-dot.cursor-click {
-  transform: scale(1.5);
-  background: var(--accent-color);
+  width: 4px;
+  height: 4px;
+  margin-top: 1px;
+  margin-left: 1px;
 }
 
 /* Hide default cursor on desktop */
@@ -77,7 +95,6 @@
 /* Dark theme adjustments */
 .dark-theme .custom-cursor {
   border-color: var(--primary-color);
-  mix-blend-mode: normal;
 }
 
 .dark-theme .custom-cursor-dot {
@@ -85,12 +102,5 @@
 }
 
 .dark-theme .custom-cursor.cursor-hover {
-  border-color: var(--accent-color);
-  background: rgba(96, 165, 250, 0.1);
+  background: rgba(var(--primary-color-rgb), 0.2);
 }
-
-.dark-theme .custom-cursor-dot.cursor-hover {
-  background: var(--accent-color);
-}
-
-

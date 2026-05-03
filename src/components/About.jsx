@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
-import { useCustomCursor } from "../hooks/useCustomCursor";
 import "./About.css";
-import "./CustomCursor.css";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,9 +8,6 @@ const About = () => {
   const headerRef = useScrollAnimation("fadeInUp");
   const textRef = useScrollAnimation("fadeInLeft");
   const statsRef = useScrollAnimation("fadeInUp");
-
-  // Initialize custom cursor
-  useCustomCursor();
 
   useEffect(() => {
     const observer = new IntersectionObserver(

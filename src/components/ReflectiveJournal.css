@@ -1,0 +1,193 @@
+.reflective-journal {
+  padding: 100px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.journal-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.journal-intro {
+  background: var(--card-bg);
+  padding: 25px 30px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.journal-intro.animate-in {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Learnings Grid */
+.learnings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.learning-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  text-align: center;
+}
+
+.learning-card.animate-in {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.learning-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.learning-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  background: rgba(var(--primary-color-rgb), 0.1);
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 50%;
+}
+
+.learning-card h4 {
+  color: var(--heading-color);
+  margin-bottom: 15px;
+  font-size: 1.15rem;
+}
+
+.learning-card p {
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Reflection Split */
+.reflection-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .reflection-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.reflection-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reflection-card.animate-in {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.reflection-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reflection-icon {
+  font-size: 1.8rem;
+  margin-right: 15px;
+}
+
+.reflection-card h3 {
+  font-size: 1.3rem;
+}
+
+.challenges h3 {
+  color: #e74c3c;
+}
+
+.outcomes h3 {
+  color: #2ecc71;
+}
+
+.reflection-card p {
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.journal-conclusion {
+  background: rgba(var(--primary-color-rgb), 0.05);
+  border-left: 4px solid var(--primary-color);
+  padding: 20px 25px;
+  border-radius: 0 15px 15px 0;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.journal-conclusion.animate-in {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.journal-conclusion p {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.journal-conclusion strong {
+  color: var(--primary-color);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .reflective-journal {
+    padding: 60px 0;
+  }
+  .journal-intro {
+    padding: 20px;
+  }
+  .learnings-grid {
+    grid-template-columns: 1fr;
+  }
+  .learning-card {
+    padding: 20px;
+  }
+  .reflection-card {
+    padding: 20px;
+  }
+  .journal-conclusion {
+    padding: 15px 20px;
+  }
+}

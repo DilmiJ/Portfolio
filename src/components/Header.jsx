@@ -38,7 +38,19 @@ const Header = () => {
               <button onClick={() => scrollToSection("about")}>About</button>
             </li>
             <li>
+              <button onClick={() => scrollToSection("career")}>Career</button>
+            </li>
+            <li>
+              <button onClick={() => scrollToSection("journal")}>Journal</button>
+            </li>
+            <li>
+              <button onClick={() => scrollToSection("certificates")}>Certificates</button>
+            </li>
+            <li>
               <button onClick={() => scrollToSection("skills")}>Skills</button>
+            </li>
+            <li>
+              <button onClick={() => scrollToSection("experience")}>Experience</button>
             </li>
             <li>
               <button onClick={() => scrollToSection("projects")}>
@@ -49,6 +61,24 @@ const Header = () => {
               <button onClick={() => scrollToSection("contact")}>
                 Contact
               </button>
+            </li>
+            <li>
+              <a 
+                href="/Dilmijayanetthi-ASEBW.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  color: "var(--primary-color)", 
+                  textDecoration: "none", 
+                  fontWeight: "bold",
+                  border: "1px solid var(--primary-color)",
+                  padding: "5px 15px",
+                  borderRadius: "20px",
+                  marginLeft: "10px"
+                }}
+              >
+                View CV
+              </a>
             </li>
           </ul>
         </nav>

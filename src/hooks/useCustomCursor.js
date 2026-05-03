@@ -33,8 +33,8 @@ export const useCustomCursor = () => {
       dotX += (mouseX - dotX) * 0.15;
       dotY += (mouseY - dotY) * 0.15;
 
-      cursor.style.transform = `translate(${cursorX - 20}px, ${cursorY - 20}px)`;
-      cursorDot.style.transform = `translate(${dotX - 4}px, ${dotY - 4}px)`;
+      cursor.style.transform = `translate(${cursorX - 15}px, ${cursorY - 15}px)`;
+      cursorDot.style.transform = `translate(${dotX - 3}px, ${dotY - 3}px)`;
 
       requestAnimationFrame(updateCursor);
     };
